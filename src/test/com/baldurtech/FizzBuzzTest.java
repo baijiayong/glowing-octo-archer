@@ -14,6 +14,7 @@ public class FizzBuzzTest {
     
     public static void runAllTest(Class clazz) throws Exception{
         for(Method method : getAllMethods(clazz)) {
+            System.out.println("testing : " + method);
             Object obj = clazz.newInstance();
             method.invoke(obj, new Object[] {});
         }
