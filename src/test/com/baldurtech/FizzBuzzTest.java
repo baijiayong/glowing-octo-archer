@@ -8,7 +8,18 @@ public class FizzBuzzTest {
     public static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
-        List<Method> testMethod = new ArrayList<Method>();
+               
+        for(Method method : getAllMethods()) {
+            Object obj = FizzBuzzTestCase.class.newInstance();
+            method.invoke(obj, new Object[] {});
+        }
+        
+        outputTestResult();
+    }
+    
+    public static List<Method> getAllMethods(){
+    
+    List<Method> testMethod = new ArrayList<Method>();
         
         Method[] methods = FizzBuzzTestCase.class.getDeclaredMethods();
         for(Method method : methods) {
@@ -18,13 +29,7 @@ public class FizzBuzzTest {
                 
             }
         }
-        
-        for(Method method : testMethod) {
-            Object obj = FizzBuzzTestCase.class.newInstance();
-            method.invoke(obj, new Object[] {});
-        }
-        
-        outputTestResult();
+        return testMethod;
     }
     public void assertEquals(String exceptedResult,String actualResult) {
         if(! exceptedResult.equals(actualResult)) {
