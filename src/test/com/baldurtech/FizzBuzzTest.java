@@ -8,13 +8,15 @@ public class FizzBuzzTest {
     public static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
-               
+        runAllTest();             
+        outputTestResult();
+    }
+    
+    public static void runAllTest() throws Exception{
         for(Method method : getAllMethods()) {
             Object obj = FizzBuzzTestCase.class.newInstance();
             method.invoke(obj, new Object[] {});
         }
-        
-        outputTestResult();
     }
     
     public static List<Method> getAllMethods(){
