@@ -14,4 +14,8 @@ public class FizzBuzzTestCase extends FizzBuzzTest {
     public void test_5_should_be_Buzz() {
         assertEquals("Buzz", fizzBuzz.say(5));
     }
+    
+    public void test_ture_should_be_True() {
+        assertTrue(1 == 1);
+    }
 }

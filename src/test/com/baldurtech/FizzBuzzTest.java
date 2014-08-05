@@ -52,6 +52,13 @@ public class FizzBuzzTest {
             System.out.println("Excepted " + exceptedResult + " But " + actualResult);
         }
     }
+    
+    public void assertTrue(boolean actualResult) {
+        if(true != actualResult) {
+            testResult = false;
+            System.out.println("Excepted  true " + " But " + actualResult);
+        }
+    }
     public static void outputTestResult() {
         if(testResult){
             System.out.println("Test Success!");
