@@ -18,4 +18,8 @@ public class FizzBuzzTestCase extends FizzBuzzTest {
     public void test_ture_should_be_True() {
         assertTrue(1 == 1);
     }
+    
+    public void test_false_should_be_false() {
+        assertFalse(1 == 1);
+    }
 }
