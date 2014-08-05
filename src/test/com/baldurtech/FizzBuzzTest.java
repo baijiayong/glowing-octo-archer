@@ -3,12 +3,20 @@ package com.baldurtech;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import org.reflections.Reflections;
 
 public class FizzBuzzTest {
     public static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
-        runAllTest(FizzBuzzTestCase.class);             
+        
+        Reflections reflection = new Reflections("com.baldurtech");
+        Set<Class<? extends FizzBuzzTest>> clazzes = reflection.getSubTypesOf(FizzBuzzTest.class);
+        for(Class clazz : clazzes) {
+        
+            runAllTest(clazz);
+        }        
         outputTestResult();
     }
     
