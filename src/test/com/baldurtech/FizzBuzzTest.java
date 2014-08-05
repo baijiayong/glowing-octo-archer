@@ -7,7 +7,8 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         
         new FizzBuzzTest().assertEquals("1", fizzBuzz.say(1));
-        new FizzBuzzTest().assertEquals("Fizz",fizzBuzz.say(3));
+        new FizzBuzzTest().assertEquals("Fizz", fizzBuzz.say(3));
+        new FizzBuzzTest().assertEquals("Buzz", fizzBuzz.say(5));
         
         outputTestResult();
         }
