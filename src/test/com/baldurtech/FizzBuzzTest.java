@@ -4,7 +4,14 @@ public class FizzBuzzTest {
     public static void main(String args[]) {
         FizzBuzz fizzBuzz = new FizzBuzz();
         
-        System.out.println("1".equals(fizzBuzz.say(1)));
-        System.out.println("Fizz".equals(fizzBuzz.say(3)));
+        new FizzBuzzTest().assertEquals("1", fizzBuzz.say(1));
+        new FizzBuzzTest().assertEquals("Fizz",fizzBuzz.say(3));
+        }
+    public void assertEquals(String exceptedResult,String actualResult) {
+        if(exceptedResult.equals(actualResult)) {
+            System.out.println(true);
+        }else {
+            System.out.println(false);
+        }
     }
 }
