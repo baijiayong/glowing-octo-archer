@@ -20,6 +20,6 @@ public class FizzBuzzTestCase extends FizzBuzzTest {
     }
     
     public void test_false_should_be_false() {
-        assertFalse(1 == 1);
+        assertFalse(1 == 2);
     }
 }
