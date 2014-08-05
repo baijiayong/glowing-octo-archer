@@ -10,8 +10,12 @@ public class FizzBuzzTest {
     public static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
+        String testPackage = null;
+        if(args.length > 0) {
+            testPackage = args[0];
+        }
         
-        Reflections reflection = new Reflections("com.baldurtech");
+        Reflections reflection = new Reflections(testPackage);
         Set<Class<? extends FizzBuzzTest>> clazzes = reflection.getSubTypesOf(FizzBuzzTest.class);
         for(Class clazz : clazzes) {
         
