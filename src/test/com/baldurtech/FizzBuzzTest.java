@@ -13,6 +13,7 @@ public class FizzBuzzTest {
         }
     public void assertEquals(String exceptedResult,String actualResult) {
         if(! exceptedResult.equals(actualResult)) {
+            testResult = false;
             System.out.println("Excepted " + exceptedResult + " But " + actualResult);
         }
     }
