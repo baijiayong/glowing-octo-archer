@@ -1,19 +1,27 @@
 package com.baldurtech;
 
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.ArrayList;
 
 public class FizzBuzzTest {
     public static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
+        List<Method> testMethod = new ArrayList<Method>();
         
         Method[] methods = FizzBuzzTestCase.class.getDeclaredMethods();
         for(Method method : methods) {
             
             if(method.getName().startsWith("test")){
-                Object obj = FizzBuzzTestCase.class.newInstance();
-                method.invoke(obj, new Object[] {});
+                testMethod.add(method);
+                
             }
+        }
+        
+        for(Method method : testMethod) {
+            Object obj = FizzBuzzTestCase.class.newInstance();
+            method.invoke(obj, new Object[] {});
         }
         
         outputTestResult();
