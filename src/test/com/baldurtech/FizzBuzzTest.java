@@ -8,22 +8,22 @@ public class FizzBuzzTest {
     public static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
-        runAllTest();             
+        runAllTest(FizzBuzzTestCase.class);             
         outputTestResult();
     }
     
-    public static void runAllTest() throws Exception{
-        for(Method method : getAllMethods()) {
-            Object obj = FizzBuzzTestCase.class.newInstance();
+    public static void runAllTest(Class clazz) throws Exception{
+        for(Method method : getAllMethods(clazz)) {
+            Object obj = clazz.newInstance();
             method.invoke(obj, new Object[] {});
         }
     }
     
-    public static List<Method> getAllMethods(){
+    public static List<Method> getAllMethods(Class clazz){
     
     List<Method> testMethod = new ArrayList<Method>();
         
-        Method[] methods = FizzBuzzTestCase.class.getDeclaredMethods();
+        Method[] methods = clazz.getDeclaredMethods();
         for(Method method : methods) {
             
             if(method.getName().startsWith("test")){
