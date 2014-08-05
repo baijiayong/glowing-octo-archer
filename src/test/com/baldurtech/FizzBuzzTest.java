@@ -68,6 +68,13 @@ public class FizzBuzzTest {
         }
     
     }
+    
+    public void assertNull(Object actualResult) {
+        if(actualResult != null) {
+            testResult = false;
+            System.out.println("Excepted  null " + " But " + actualResult);
+        }
+    }
     public static void outputTestResult() {
         if(testResult){
             System.out.println("Test Success!");
