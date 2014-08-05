@@ -9,9 +9,12 @@ public class FizzBuzzTest {
         }
     public void assertEquals(String exceptedResult,String actualResult) {
         if(exceptedResult.equals(actualResult)) {
-            System.out.println(true);
+            
         }else {
-            System.out.println(false);
+            outputTestResult();
         }
+    }
+    public void outputTestResult() {
+        System.out.println(false);
     }
 }
